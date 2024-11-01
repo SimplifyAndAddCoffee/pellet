@@ -5,6 +5,7 @@ leng=5;
 walls=1;
 tol=0.1;
 gap=0.2;
+segments=6;
 $fn=360;
 
 thick=nozz*walls;
@@ -27,6 +28,7 @@ module flachette(){
                 translate([0,0,thick])cylinder(h=thick*0.5,d=diam);
                 }
                 union(){
+                translate([0,0,thick+diam-cone])linear_extrude(height=cone/2,scale=0)circle(d=cone);
             translate([0,0,thick*1])linear_extrude(height=(diam-cone),scale=cone/(diam-2*thick))circle(d=diam-2*thick);            
             }
             }
